@@ -41,4 +41,13 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+    //buku bisa memiliki banyak peminjaman
+    public function pinjam(){
+        return $this->hasMany(pinjam::class);
+    }
+    public function ulasan(){
+        return $this->hasMany(ulasan::class);
+    }
 }
